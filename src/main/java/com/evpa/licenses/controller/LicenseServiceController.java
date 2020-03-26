@@ -1,4 +1,4 @@
-package com.evpa.licenses.controllers;
+package com.evpa.licenses.controller;
 
 import com.evpa.licenses.model.License;
 import org.springframework.web.bind.annotation.PathVariable;

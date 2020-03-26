@@ -1,4 +1,4 @@
-package com.evpa.licenses.services;
+package com.evpa.licenses.service;
 
 import com.evpa.licenses.repository.LicenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;

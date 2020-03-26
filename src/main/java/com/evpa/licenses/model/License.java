@@ -1,13 +1,10 @@
 package com.evpa.licenses.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import javax.persistence.*;
-
-@Data
-@NoArgsConstructor
 @Entity
 @Table(name = "licenses")
 public class License {
@@ -22,6 +19,8 @@ public class License {
     @Column(name = "license_type")
     private String licenseType;
 
+    public License() {}
+
     public License(String licenseId, String organizationId, String productName, String licenseType) {
         this.licenseId = licenseId;
         this.organizationId = organizationId;
@@ -29,23 +28,39 @@ public class License {
         this.licenseType = licenseType;
     }
 
+    public void setLicenseId(String licenseId) {
+        this.licenseId = licenseId;
+    }
+
+    public void setOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public void setLicenseType(String licenseType) {
+        this.licenseType = licenseType;
+    }
+
     public License withId(String licenseId){
-        this.setLicenseId(licenseId);
+        setLicenseId(licenseId);
         return this;
     }
 
     public License withOrganizationId(String organizationId){
-        this.setOrganizationId(organizationId);
+        setOrganizationId(organizationId);
         return this;
     }
 
     public License withProductName(String productName){
-        this.setProductName(productName);
+        setProductName(productName);
         return this;
     }
 
     public License withLicenseType(String licenseType){
-        this.setLicenseType(licenseType);
+        setLicenseType(licenseType);
         return this;
     }
 

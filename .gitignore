@@ -70,6 +70,9 @@ target/
 # Gradle
 ######################
 .gradle/
+gradlew
+gradlew.bat
+gradle/
 
 ######################
 # Package Files
