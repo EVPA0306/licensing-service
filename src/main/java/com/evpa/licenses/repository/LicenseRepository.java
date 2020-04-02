@@ -12,4 +12,6 @@ public interface LicenseRepository extends JpaRepository<License,String> {
     License findByOrganizationIdAndLicenseId(String organizationId, String licenseId);
 
     List<License> findByOrganizationId(String organizationId);
+
+    License findByLicenseId(String id);
 }

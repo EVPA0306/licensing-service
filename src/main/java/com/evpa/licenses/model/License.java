@@ -1,13 +1,21 @@
 package com.evpa.licenses.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.hateoas.RepresentationModel;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "licenses")
-public class License {
+public class License extends RepresentationModel<License> {
     @Id
     //@GeneratedValue
     @Column(name = "license_id", nullable = false)
@@ -18,31 +26,6 @@ public class License {
     private String productName;
     @Column(name = "license_type")
     private String licenseType;
-
-    public License() {}
-
-    public License(String licenseId, String organizationId, String productName, String licenseType) {
-        this.licenseId = licenseId;
-        this.organizationId = organizationId;
-        this.productName = productName;
-        this.licenseType = licenseType;
-    }
-
-    public void setLicenseId(String licenseId) {
-        this.licenseId = licenseId;
-    }
-
-    public void setOrganizationId(String organizationId) {
-        this.organizationId = organizationId;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public void setLicenseType(String licenseType) {
-        this.licenseType = licenseType;
-    }
 
     public License withId(String licenseId){
         setLicenseId(licenseId);
@@ -63,7 +46,4 @@ public class License {
         setLicenseType(licenseType);
         return this;
     }
-
-    //public License withComment(String comment) {
-    //}
 }

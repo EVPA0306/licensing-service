@@ -1,6 +1,14 @@
 management:
+  endpoint:
+    health:
+      show-details: always
   security:
     enabled: false
+  health:
+    db:
+      enabled: true
+    diskspace:
+      enabled: true
 
 spring:
   profiles:
